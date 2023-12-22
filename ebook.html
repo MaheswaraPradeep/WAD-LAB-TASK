@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DBMS</title>
+    <style>
+      .page {
+        page-break-before: always;
+      }
+    </style>
+  </head>
+  <body>
+    <center><img src="DBMS.jpg" alt="DBMS" width="" /></center>
+    <hr />
+    <div class="page">
+      <h2>DBMS</h2>
+      <h3>Table of contents</h3>
+      <ol>
+        <li><a href="#chapter1">Introduction to DBMS</a></li>
+        <li><a href="#chapter2">ER Model</a></li>
+        <li><a href="#chapter3">Relational model</a></li>
+        <li><a href="#chapter4">SQL queries</a></li>
+      </ol>
+    </div>
+    <hr />
+    <div class="page" id="chapter1">
+      <center><h2>Ch1: Introduction to DBMS</h2></center>
+      <p>
+        A <b>database</b> is a structured collection of data that typically
+        describes the activities of one or more organizations. For example, a
+        university database might contain information about the following:
+      </p>
+      <ul>
+        <li>Entities such as students, faculty,courses,and classrooms.</li>
+        <li>
+          Relationships between entities, such as students' enrollment in
+          courses, faculty teaching courses, and the use of rooms for courses.
+        </li>
+      </ul>
+      <p>
+        <b>Database Management System (DBMS) </b>is a software system that
+        allows users to interact with a database. A database is a collection of
+        organized data that can be easily accessed, managed, and updated. DBMS
+        serves as an interface between the database and the users or application
+        programs, ensuring that data is consistently organized and remains
+        easily accessible.
+      </p>
+      <p>
+        Database management systems encompass a microcosm of computer science at
+        large. The field addresses a diverse range of issues and employs
+        techniques that span a broad spectrum. This includes languages,
+        object-orientation, various programming paradigms, compilation,
+        operating systems, concurrent programming, data structures, algorithms,
+        theoretical concepts, parallel and distributed systems, user interfaces,
+        expert systems, artificial intelligence, statistical techniques, and
+        dynamic programming. Although we cannot delve into all these aspects of
+        database management in this book, it is evident that this discipline is
+        rich and vibrant.
+      </p>
+      <p>
+        The significance of database management is escalating with the
+        increasing availability and accessibility of data online, facilitated by
+        computer networking. Presently, the field is driven by compelling
+        visions, including multimedia databases, interactive video, digital
+        libraries, ambitious scientific projects such as the Human Genome
+        Mapping effort and NASA's Earth Observation System project.
+        Additionally, businesses are keen on consolidating their decision-making
+        processes and extracting valuable information from their data
+        repositories. In the commercial realm, database management systems
+        constitute one of the largest and most dynamic market segments.
+        Therefore, the exploration of database systems holds the potential for
+        rich and multifaceted rewards.
+      </p>
+    </div>
+    <hr />
+    <div class="page" id="chapter2">
+      <center><h2>Ch2: ER Model</h2></center>
+      <p>
+        The entity-relationship (ER) data model allows us to describe the data
+        involved in a real-world enterprise in terms of objects and their
+        relationships and is widely used to develop an initial database design.
+        In this chapter, we introduce the ER model and discuss how its features
+        allow us to model a wide range of data faithfully.
+      </p>
+      <h3>ENTITIES, ATTRIBUTES, AND ENTITY SETS</h3>
+      <p>
+        An <b>entity</b> is an object in the real world that is distinguishable
+        from other objects. Examples include the following: the Green Dragonzord
+        toy, the toy department, the manager of the toy department, the home
+        address of the manager of the toy department. It is often useful to
+        identify a collection of similar entities. Such a collection is called
+        an entity set. Note that entity sets need not be disjoint; the
+        collection of toy department employees and the collection of appliance
+        department employees may both contain employee John Doe (who happens to
+        work in both departments). We could also define an entity set called
+        Employees that contains both the toy and appliance department employee
+        sets.
+      </p>
+      <p>
+        An entity is described using a set of attributes. All entities in a
+        given entity set have the same attributes; this is essentially what we
+        mean by similar. Our choice of attributes reflects the level of detail
+        at which we wish to represent information about entities. For example,
+        the Employees entity set could use name, social security number (SSN),
+        and parking lot (lot) as attributes. In this case, we will store the
+        name, social security number, and lot number for each employee. However,
+        we will not store, say, an employee's address or gender or age.
+      </p>
+      <h3>RELATIONSHIPS AND RELATIONSHIP SETS</h3>
+      <p>
+        A relationship is an association among two or more entities. For
+        example, we may have the relationship that Attishoo works in the
+        pharmacy department. As with entities, we may wish to collect a set of
+        similar relationships into a relationship set.
+      </p>
+      <img src="er.png" ,alt="er" /> <br />
+      <img src="er2.png" , alt="er diagram" />
+    </div>
+    <hr />
+    <div class="page" id="chapter3">
+      <center><h2>Ch-3: Relational model</h2></center>
+      <p>
+        Codd proposed the relational data model in 1970. At that time, most
+        database systems were based on one of two older data models (the
+        hierarchical model and the network model). The relational model
+        revolutionized the database field and largely supplanted these earlier
+        models. Prototype relational database management systems were developed
+        in pioneering research projects at IBM and UC-Berkeley by the mid-70s,
+        and several vendors were offering relational database products shortly
+        thereafter. Today, the relational model is by far the dominant data
+        model and is the foundation for the leading DBMS products, including
+        IBM's DB2 family, Informix, Oracle, Sybase, Microsoft's Access and SQL
+        Server, FoxBase, and Paradox. Relational database systems are ubiquitous
+        in the marketplace and represent a multibillion-dollar industry.
+      </p>
+      <p>
+        The relational model is very simple and elegant; a database is a
+        collection of one or more relations, where each relation is a table with
+        rows and columns. This simple tabular representation enables even novice
+        users to understand the contents of a database, and it permits the use
+        of simple, high-level languages to query the data. The major advantages
+        of the relational model over the older data models are its simple data
+        representation and the ease with which even complex queries can be
+        expressed.
+      </p>
+      <h3>Introduction to relational model</h3>
+      <p>
+        The main construct for representing data in the relational model is a
+        relation. A relation consists of a relation schema and a relation
+        instance. The relation instance is a table, and the relation schema
+        describes the column heads for the table. We first describe the relation
+        schema and then the relation instance. The schema specifies the
+        relation's name, the name of each field (or column, or attribute), and
+        the domain of each field. A domain is referred to in a relation schema
+        by the domain name and has a set of associated values.
+      </p>
+      <p>An instance of the Students relation appears in Figure 3.1.</p>
+      <img src="rm.png" alt="relational model" />
+      <p>
+        The instance S1 contains six tuples and has, as we expect from the
+        schema, five fields. Note that no two rows are identical. This is a
+        requirement of the relational model — each relation is defined to be a
+        set of unique tuples or rows.
+      </p>
+    </div>
+    <hr />
+    <div class="page" id="chapter4">
+      <center><h2>Ch 4: Sql queries</h2></center>
+      <p>
+        Structured Query Language (SQL) is the most widely used commercial
+        relational database language. It was originally developed at IBM in the
+        SEQUEL-XRM and System-R projects (1974-1977). Almost immediately, other
+        vendors introduced DBMS products based on SQL, and it is now a de facto
+        standard. SQL continues to evolve in response to changing needs in the
+        database area. Our presentation follows the current ANSI/ISO standard
+        for SQL, which is called SQL-92. We also discuss some important
+        extensions in the new standard, SQL:1999. While not all DBMS products
+        support the full SQL-92 standard yet, vendors are working toward this
+        goal, and most products already support the core features. The SQL
+        language has several aspects to it:
+      </p>
+      <li>
+        <b>The Data Definition Language (DDL):</b> This subset of SQL supports
+        the creation, deletion, and modification of definitions for tables and
+        views. Integrity constraints can be defined on tables, either when the
+        table is created or later. The DDL also provides commands for specifying
+        access rights or privileges to tables and views. Although the standard
+        does not discuss indexes, commercial implementations also provide
+        commands for creating and deleting indexes.
+      </li>
+      <li>
+        <b>The Data Manipulation Language (DML):</b> This subset of SQL allows
+        users to pose queries and to insert, delete, and modify rows.
+      </li>
+      <li>
+        <b>Triggers: </b>The new SQL:1999 standard includes support for
+        triggers, which are actions executed by the DBMS whenever changes to the
+        database meet conditions specified in the trigger.
+      </li>
+      <li>
+        <b>Security: </b>SQL provides mechanisms to control users' access to
+        data objects such as tables and views.
+      </li>
+      <li>
+        <b>Transaction management: </b>Various commands allow a user to
+        explicitly control aspects of how a transaction is to be executed.
+      </li>
+      <li>
+        <b>Client-server execution and remote database access: </b>These
+        commands control how a client application program can connect to an SQL
+        database server or access data from a database over a network.
+      </li>
+      <p>The basic form of an SQL query is as follows</p>
+      <pre>
+SELECT [DISTINCT ]select-list 
+FROM from-list 
+WHERE qualication</pre
+      >
+      <p>
+        Such a query intuitively corresponds to a relational algebra expression
+        involving selections, projections, and cross-products. Every query must
+        have a SELECT clause, which specifies columns to be retained in the
+        result, and a FROM clause, which specifies a cross-product of tables.
+        The optional WHERE clause specifies selection conditions on the tables
+        mentioned in the FROM clause.
+      </p>
+      <p>We now consider the syntax of a basic SQL query in more detail.</p>
+      <ul>
+        <li>
+          The <b>FROM-list</b> in the FROM clause is a list of table names. A
+          table name can be followed by a range variable; a range variable is
+          particularly useful when the same table name appears more than once in
+          the FROM-list.
+        </li>
+        <li>
+          The <b>select-list</b> is a list of (expressions involving) column
+          names of tables named in the FROM-list. Column names can be prefixed
+          by a range variable.
+        </li>
+        <li>
+          The <b>qualification</b> in the <b>WHERE</b> clause is a boolean
+          combination (i.e., an expression using the logical connectives AND,
+          OR, and NOT) of conditions of the form expression op expression, where
+          op is one of the comparison operators {<, <=, =, <>, >=, >}.
+        </li>
+        <li>
+          The DISTINCT keyword is optional. It indicates that the table computed
+          as an answer to this query should not contain duplicates, that is, two
+          copies of the same row. The default is that duplicates are not
+          eliminated.
+        </li>
+      </ul>
+      <p>
+        We illustrate the conceptual evaluation strategy using the following
+        query:
+      </p>
+      <p>
+        <b
+          >(Q1) Find the names of sailors who have reserved boat number 103.
+        </b>
+      </p>
+      <p>It can be expressed in SQL as follows:</p>
+      <pre>
+SELECT S.sname
+FROM Sailors S, Reserves R
+WHERE S.sid = R.sid AND R.bid = 103;
+        </pre
+      >
+      <img src="ans1.png" alt="answer" />
+    </div>
+  </body>
+</html>
