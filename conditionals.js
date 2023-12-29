@@ -1,0 +1,16 @@
+if(year==2023){
+    alert("correct");
+}
+else{
+    alert("incorrect");
+}
+
+let x = 15;
+
+if (x > 10) {
+    console.log("x is greater than 10");
+} else if (x === 10) {
+    console.log("x is equal to 10");
+} else {
+    console.log("x is less than 10");
+}

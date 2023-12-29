@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>operators</title>
+</head>
+<body>
+    <h1>Operators in js</h1>
+    <script>
+        //Mathematical operators
+        let x=10;
+        let y=2;
+        document.write(x+y+"<br>");
+        document.write(x-y+"<br>");
+        document.write(x*y+"<br>");
+        document.write(x/y+"<br>");
+        document.write(x%y+"<br>");
+        document.write(x**y+"<br>");
+
+        //string concat with +
+        document.write("<p>String concatenation using +"+"<br>")
+        let s="my"+" pen";
+        document.write(s+"<br>");
+        document.write(2+'1'+"<br>");
+        document.write('1'+12+"<br>");
+        document.write(1+2+'4'+"<br>");
+        document.write('3'+'4'+"1"+"<br>");
+        //only + opr works on numbers and strings this way
+        //remainig all operators convert string to numbers
+        document.write(6-'3'+"<br>");
+        document.write('6'/'2'+"<br>");
+        //numeric conversion using +.
+        //(+x) this does nothing to x if number but if other dataype then it conversts it to number
+        let a=2,b=true;
+        document.write(+a+"<br>");
+        document.write(+b+"<br>");
+    </script>
+</body>
+</html>
