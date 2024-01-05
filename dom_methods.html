@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Methods</title>
+    </head>
+    <body>
+        <h1>DOM elements</h1>
+        <p>Finding elements using tag name</p>
+        <p>The <b>getElementsByTagName</b> is demonstrated in this example.</p>
+        <p id="demo"></p>
+        <script>
+            const element=document.getElementsByTagName("p");
+            document.getElementById("demo").innerHTML="The paragraph which is the first is: "+element[0].innerHTML;
+            document.getElementById("demo").innerHTML="date: "+Date();
+        </script>
+    </body>
+</html>

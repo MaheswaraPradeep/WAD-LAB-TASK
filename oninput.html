@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <label>Enter ypur name:</label>
+        <input type="text" id="name" oninput="upperCase()">
+        <label>Enter your city:</label>
+        <input type="text" id="city" onchange="upperCase()">
+        <script>
+            function upperCase(){
+                let x=document.getElementById("city");
+                x.value=x.value.toUpperCase();
+            }
+        </script>
+    </body>
+</html>
